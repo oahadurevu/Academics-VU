@@ -1,0 +1,31 @@
+create database lab4
+use lab4
+
+SELECT day('1 /31/2012' );
+
+SELECT DATEDIFF(DAY,'2003-10-20','2006-10-20');
+
+SELECT CAST(25.26 AS INT);
+
+select convert (DATE,'2003-10-20',120);
+
+SELECT DATEADD(DAY, 5, GETDATE());     -- +5 days
+SELECT DATEADD(MONTH, -1, GETDATE());  -- -1 month
+SELECT DATEADD(YEAR, 1, GETDATE());    -- +1 year
+
+SELECT CONVERT(VARCHAR, GETDATE(), 103); -- dd/mm/yyyy
+SELECT CONVERT(VARCHAR, GETDATE(), 101); -- mm/dd/yyyy
+SELECT CONVERT(VARCHAR, GETDATE(), 120); -- yyyy-mm-dd
+
+SELECT CAST(GETDATE() AS DATE); -- remove time
+
+SELECT ISDATE('2025-04-18'); -- 1 (valid)
+SELECT ISDATE('abc');        -- 0 (invalid)
+
+SELECT DATEDIFF(DAY, '2024-01-01', GETDATE());
+SELECT DATEDIFF(MONTH, '2024-01-01', GETDATE());
+
+SELECT 
+    DAY(GETDATE())   AS DAY,
+    MONTH(GETDATE()) AS MONTH,
+    YEAR(GETDATE())  AS YEAR;
